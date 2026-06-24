@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abdul Sattar | Web Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Inner", sans-serif;
+        /* pory website ka bydefault font inner   */
+      }
+
+      html {
+        scroll-behavior: smooth;
+        /* ye smooth scrool klia huta ha , jab koy nav ma link click kary tu smootholy scroll hu jhatky na khay  */
+      }
+
+      .gradient-text {
+        background: linear-gradient(to right, #6366f1, #8b5cf6);
+        /* text ke pichy ek purple gradient background bana rahy ha  */
+        -webkit-background-clip: text;
+        /* gradient ko sarif text ke andar clip kar rahy ha  */
+        -webkit-text-fill-color: transparent;
+        /* text ka orignal color transparent kar rhay ha take gradient dikhe */
+      }
+
+      .card-hover {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        /* card par hover kany par smoothly animation hu gy 0.3s klia */
+      }
+
+      .card-hover:hover {
+        transform: translate(-8px);
+        /* hover kary par card 8 px uper uthy ga*/
+        box-shadow: 0 20px 40px rgba (99, 102, 241, 0.15);
+        /* hover karny par card ke nichy purple shadow ay gy*/
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-950 text-white">
+    <!-- body ma pora visible content huta ha - bg-gray-950 ka matlab dark backgroud , text white matlab ke safeed text  -->
+
+    <!-- ====NAVBAR START==== -->
+
+    <nav class="fixed top-0 left-0 w-full z-50 bg-gray-950/90 backdrop-blur-md border-b border-grey-800">
+
+        <!-- navbar fixed  ka matlab ha ke navbar hamesha fixed he rhay ga nichy scrool par be ye chipki  he rahy gy ye move nia hu gy  -->
+         <!-- w-full = pori width , z-50 = sab se oper wali layer , background-blur = pichy blur effect -->
+
+
+
+         <div class=" max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- max-w-6xl = content ke max width limit , mx-auto = conter ma , flex = items ek line ma  -->
+
+            <a href="#hero" class="text-xl font-black gradient-text>
+            <!-- logo ka link ha jo click karny par hero section par ly gay ga  -->
+            AS <span class="text-white" > . </span>
+            <!-- "AS" Abdul Sattar ka initials hain. dot white color ma ha  -->
+            
+            </a>
+            <!-- Desktop Navigation Links -->
+            <ul class="hidden md:flex gap-8 text-sm font-semibold text-gery-300">
+                <!-- hidden = mobile par ye list chupi rehy gy , md:flex = medium screen par flex ma ay gy  -->
+
+                <li><a href="#services" class="hover:text-indigo-400 transition-colors">Services</a></li>
+                <!-- Services link par hover karny se indigo color ayga  -->
+
+                <li><a href="#about" class="hover:text-indigo-400 transition-colors">About</a></li>
+                <!-- About section ka link   -->
+
+                <li><a href="#contact" class="hover:text-indigo-400 transition-colors">Contact</a></li>
+                <!-- Contact section ka link   -->
+
+            </ul>
+
+            <!-- Hire Me button | Desktop  par dikhy ga  -->
+             <a href="#contact" class="hidden" md:block bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold px -5 py-2 rounded-full transition-colors
+             <!-- hidden md: block = mobile par chupa , desktop par block element bhega -->
+             >HIre Me</a>
+
+             <!-- Mobile Hamburger Button -->
+
+             <button id="menuBtn" class="md:hidden text-grey-300 focus:outline-none ">
+                <!-- md:hidden = desktop par ye button chupta  ha , par mobile ma dikhta ha  -->
+                 <!-- id="menuBtn" se java script is button ko pakry ga  -->
+                  < svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox=" 0 0 24 24" >
+                  <!--  svg se hamburger icon 3 lines bana raha ha  -->
+
+                  <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                  <!-- ye 3 horizontol lines ha hamburger menu  ka iocn  -->
+
+             </svg>
+
+             </button>
+         </div>
+
+          <!-- mobile dropdown menu -->
+           <div id="mobleMenu" class="hidden md:hidden bg-grey-900 border-t border-grey-800 px-6 py-4">
+            <!-- id="mobile menu " java script is ko hide/show kry ga  -->
+             <!-- default ma hidden ha hamburger par clic karny par he dikhy ga  -->
+
+             <ul class="flex flex-col gap-4  text-sm  font-semibold text-gery-300 ">
+                <!-- flex-col = links uper nichy hungy mibile main  -->
+
+                 <li><a href="#services" class="hover:text indigo-400 transition-colors" onclick="closeMobileMenu()">Services</a></li>
+   <!-- onclick="closeMobileMenu()" = link click karne par menu band ho jayega -->
+
+        <li><a href="#about" class="hover:text-indigo-400 transition-colors" onclick="closeMobileMenu()">About</a></li>
+
+        <li><a href="#contact" class="hover:text-indigo-400 transition-colors" onclick="closeMobileMenu()">Contact</a></li>
+
+        <li>
+          <a href="#contact" onclick="closeMobileMenu()" class="block bg-indigo-600 hover:bg-indigo-500 text-white text-center px-5 py-2 rounded-full transition-colors">
+          <!-- Mobile mein bhi Hire Me button dikhega -->
+            Hire Me
+          </a>
+        </li>
+             </ul>
+
+           </div>
+
+    </nav>
+    <!-- ====NAVBAR END==== -->
+
+    <!-- ====HERO SECTION START==== -->
+
+    <SECTIon id="hero" class="min-h-screen flex items-center justify-center px-6 pt-24">
+
+
+        <div class="max-w-4xl mx-auto text-center">
+
+            <p class="text-indigo-400 font-semibold text-sm uppercase tracking-widset mb-4">Hello , I'm</p>
+
+            <h1 class=" text-5xl md:text-7xl font-black mb-6 leading-tight" >
+                <span class=" gradient-text"> Abdul Sattar</span>
+
+            </h1>
+
+            <h2 class=" text-2xl md:text-3xl font-bold text-grey-300 mb-6">
+            FUll Stack Web Developer    
+            </h2>
+
+            <p class="text-grey-400 text-lg max-w-2xl mx-auto md-10 leading-relaxed">
+                I build fast , modern , and responsive web applicatoins that helps buisnesses grow online . From clean frontends to powerful backends , I'vs got you covered. 
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+
+                <a href="#services " class=" bg-indigo-600 hover:bg-indigo-500 text white font-bold px-8 py-4 rounded-full transition-colors text-lg">
+                    View My Work 
+                </a>
+
+                <a href="#contact" class="border-2 border-indigo-600 text-indigo-400  hover:bg-indigo-600 hover:text-white font-bold px-8 py-4 rounded-full transition-colors text-lg">
+
+                    Hire Me 
+                </a>
+                        
+            </div>
+
+        </div>
+
+    </SECTIon>
+
+      <!-- ===== HERO SECTION END ===== -->
+
+
+
+        <!-- ===== SERVICES SECTION START ===== -->
+
+        <section id="services" class="py-24 px-6">
+  <!-- py-24 = upar neeche 24 units padding — sections ke beech space deta hai -->
+
+    <div class="max-w-6xl mx-auto">
+    <!-- max-w-6xl = content ki width limit, mx-auto = center mein -->
+
+      <div class="text-center mb-16">
+      <!-- Section ka heading center mein, mb-16 = neeche margin -->
+
+        <p class="text-indigo-400 font-semibold text-sm uppercase tracking-widest mb-3">What I Do</p>
+        <!-- Section ka chota label -->
+
+        <h2 class="text-4xl md:text-5xl font-black">My <span class="gradient-text">Services</span></h2>
+        <!-- Section heading — "Services" word par gradient -->
+
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- grid = card layout, grid-cols-1 = mobile par 1 column, md:grid-cols-3 = desktop par 3 columns -->
+
+        <!-- Service Card 1 -->
+        <div class="card-hover bg-gray-900 border border-gray-800 rounded-2xl p-8">
+        <!-- card-hover class upar CSS mein define ki thi — hover par utha uthega -->
+        <!-- bg-gray-900 = dark card background, rounded-2xl = gol corners, p-8 = andar se padding -->
+
+          <div class="text-4xl mb-4">🎨</div>
+          <!-- Service ka emoji icon -->
+
+          <h3 class="text-xl font-bold mb-3">UI/UX Design</h3>
+          <!-- Card ka title -->
+
+          <p class="text-gray-400 leading-relaxed">
+          <!-- Card ka description — gray color mein -->
+            Creating beautiful, user-friendly interfaces that look great on every device and screen size.
+            <!-- Dummy description -->
+          </p>
+
+        </div>
+        <!-- Service Card 1 End -->
+
+        <!-- Service Card 2 -->
+        <div class="card-hover bg-gray-900 border border-gray-800 rounded-2xl p-8 border-indigo-500/30">
+        <!-- Yeh middle card hai — border-indigo-500/30 = halki indigo border se highlight -->
+
+          <div class="text-4xl mb-4">⚡</div>
+
+          <h3 class="text-xl font-bold mb-3">Web Development</h3>
+
+          <p class="text-gray-400 leading-relaxed">
+            Building fast, scalable, and modern web apps using React, Node.js, and MongoDB.
+          </p>
+
+        </div>
+        <!-- Service Card 2 End -->
+
+        <!-- Service Card 3 -->
+        <div class="card-hover bg-gray-900 border border-gray-800 rounded-2xl p-8">
+
+          <div class="text-4xl mb-4">🚀</div>
+
+          <h3 class="text-xl font-bold mb-3">SEO & Performance</h3>
+
+          <p class="text-gray-400 leading-relaxed">
+            Optimizing websites for speed, search engines, and the best possible user experience.
+          </p>
+
+        </div>
+        <!-- Service Card 3 End -->
+
+      </div>
+
+    </div>
+
+  </section>
+  <!-- ===== SERVICES SECTION END ===== -->
+
+
+  <!-- ===== ABOUT SECTION START ===== -->
+  <section id="about" class="py-24 px-6 bg-gray-900/50">
+  <!-- bg-gray-900/50 = thoda alag background — sections ko alag dikhane ke liye -->
+
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+    <!-- grid-cols-2 = desktop par do columns — ek text, ek stats -->
+
+      <!-- Left Side — Text -->
+      <div>
+
+        <p class="text-indigo-400 font-semibold text-sm uppercase tracking-widest mb-3">Who I Am</p>
+
+        <h2 class="text-4xl md:text-5xl font-black mb-6">About <span class="gradient-text">Me</span></h2>
+
+        <p class="text-gray-400 leading-relaxed mb-6">
+          Hi! I'm Abdul Sattar, a passionate Full Stack Web Developer based in Islamabad, Pakistan.
+          I specialize in building modern web applications using the MERN stack.
+          <!-- Dummy about text -->
+        </p>
+
+        <p class="text-gray-400 leading-relaxed mb-8">
+          I love turning ideas into real products. Whether it's a landing page or a full web app —
+          I bring clean code and great design to every project.
+        </p>
+
+        <a href="#contact" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-8 py-4 rounded-full transition-colors inline-block">
+        <!-- inline-block = button apni content ke barabar width lega -->
+          Let's Work Together
+        </a>
+
+      </div>
+
+      <!-- Right Side — Stats -->
+      <div class="grid grid-cols-2 gap-6">
+      <!-- 4 stat boxes — 2 columns mein -->
+
+        <!-- Stat Box 1 -->
+        <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6 text-center">
+          <p class="text-4xl font-black gradient-text mb-2">15+</p>
+          <!-- Bada number — gradient mein -->
+          <p class="text-gray-400 text-sm">Projects Completed</p>
+          <!-- Chota label neeche -->
+        </div>
+
+        <!-- Stat Box 2 -->
+        <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6 text-center">
+          <p class="text-4xl font-black gradient-text mb-2">10+</p>
+          <p class="text-gray-400 text-sm">Happy Clients</p>
+        </div>
+
+        <!-- Stat Box 3 -->
+        <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6 text-center">
+          <p class="text-4xl font-black gradient-text mb-2">2+</p>
+          <p class="text-gray-400 text-sm">Years Experience</p>
+        </div>
+
+        <!-- Stat Box 4 -->
+        <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6 text-center">
+          <p class="text-4xl font-black gradient-text mb-2">100%</p>
+          <p class="text-gray-400 text-sm">Client Satisfaction</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+  <!-- ===== ABOUT SECTION END ===== -->
+
+
+  <!-- ===== CONTACT SECTION START ===== -->
+  <section id="contact" class="py-24 px-6">
+
+    <div class="max-w-2xl mx-auto text-center">
+    <!-- max-w-2xl = contact section thoda narrow rakha — center focus ke liye -->
+
+      <p class="text-indigo-400 font-semibold text-sm uppercase tracking-widest mb-3">Get In Touch</p>
+
+      <h2 class="text-4xl md:text-5xl font-black mb-6">Contact <span class="gradient-text">Me</span></h2>
+
+      <p class="text-gray-400 mb-10">
+        Have a project in mind? Let's talk and build something amazing together.
+      </p>
+
+      <!-- Contact Info Cards -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+      <!-- flex-col mobile par, sm:flex-row tablet se ek line mein -->
+
+        <!-- Email Card -->
+        <a href="mailto:abdulsattar@email.com" class="flex items-center gap-3 bg-gray-900 border border-gray-800 hover:border-indigo-500 px-6 py-4 rounded-2xl transition-colors">
+        <!-- mailto: = click karne par email app khuleg -->
+          <span class="text-2xl">📧</span>
+          <span class="text-gray-300 font-semibold">abdulsattar@email.com</span>
+          <!-- Dummy email -->
+        </a>
+
+        <!-- WhatsApp Card -->
+        <a href="https://wa.me/923001234567" target="_blank" class="flex items-center gap-3 bg-gray-900 border border-gray-800 hover:border-indigo-500 px-6 py-4 rounded-2xl transition-colors">
+        <!-- wa.me = WhatsApp ka direct link, target="_blank" = naye tab mein khulega -->
+          <span class="text-2xl">💬</span>
+          <span class="text-gray-300 font-semibold">+92 300 1234567</span>
+          <!-- Dummy WhatsApp number -->
+        </a>
+
+      </div>
+
+      <!-- Social Links -->
+      <div class="flex gap-4 justify-center">
+      <!-- Social icons ek line mein center mein -->
+
+        <a href="#" class="bg-gray-900 border border-gray-800 hover:border-indigo-500 hover:text-indigo-400 p-4 rounded-2xl transition-colors text-xl">
+        <!-- GitHub link — # is waqt placeholder hai -->
+          🐙
+        </a>
+
+        <a href="#" class="bg-gray-900 border border-gray-800 hover:border-indigo-500 hover:text-indigo-400 p-4 rounded-2xl transition-colors text-xl">
+        <!-- LinkedIn link -->
+          💼
+        </a>
+
+        <a href="#" class="bg-gray-900 border border-gray-800 hover:border-indigo-500 hover:text-indigo-400 p-4 rounded-2xl transition-colors text-xl">
+        <!-- Twitter/X link -->
+          🐦
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+  <!-- ===== CONTACT SECTION END ===== -->
+
+
+  <!-- ===== FOOTER START ===== -->
+  <footer class="border-t border-gray-800 py-8 px-6 text-center text-gray-500 text-sm">
+  <!-- border-t = sirf upar border, baki sab center mein chota gray text -->
+    <p>© 2026 Abdul Sattar. Built with ❤️ in Islamabad, Pakistan.</p>
+    <!-- Copyright line — dummy year hai, baad mein update kar sakte ho -->
+  </footer>
+  <!-- ===== FOOTER END ===== -->
+
+
+  <script src="script.js"></script>
+  <!-- Yeh line script.js file ko HTML se link kar rahi hai — JS wahan likhenge -->
+
+
+  </body>
+</html>
