@@ -1,0 +1,340 @@
+/* === RESET=== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===CSS VARIABLES=== */
+
+:root {
+  --primary-color: #c0392b;
+  --secondary-color: #e67e62;
+  --dark-color: #1a1a1a;
+  --light-color: #f9f5f0;
+  --card-bg: #ffffff;
+  --text-muted: #666666;
+}
+
+/* ===BODY=== */
+
+body {
+  font-family: "Gerorgia", serif;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  line-height: 1.6;
+}
+
+/* ===HEADER=== */
+
+header {
+  background-color: rgba(26, 26, 26, 0.85);
+  /* var(--dark-color); */
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.restaurant-info h1 {
+  color: var(--secondary-color);
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+
+.restaurant-info .tagline {
+  color: #aaaaaa;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+/* ===NAV=== */
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  letter-spacing: 1px;
+  padding: 5px 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3 ease;
+}
+
+nav ul li a:hover {
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+/* ===HERO SECTION=== */
+
+.hero {
+  background-color: var(--dark-color);
+
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+    url("./karachi-biryani.jpg");
+  /* ./ matlab current folder mein dhundo */
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content h2 {
+  color: #ffffff;
+  font-size: 48px;
+  letter-spacing: 3px;
+  margin: bottom 15px;
+}
+
+.hero-content p {
+  color: #cccccc;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 12px 35px;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 2px;
+  border-radius: 4px;
+  transition: all 0.3 ease;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: var(--secondary-color);
+  letter-spacing: 3px;
+}
+
+/* ===MENU SECTION=== */
+
+.menu-section {
+  padding: 60px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.menu-title {
+  text-align: center;
+  font-size: 36px;
+  color: var(--primary-color);
+  margin-bottom: 50px;
+  letter-spacing: 3px;
+}
+
+/* ===CATAGORY SECTION=== */
+
+.catagory {
+  margin-bottom: 60px;
+}
+
+.catagory h3 {
+  font-size: 26px;
+  color: var(--dark-color);
+  margin: bottom 25px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--primary-color);
+  display: inline-block;
+}
+
+/* ===ITEM GRID===  */
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* ===CARDS=== */
+
+.card {
+  background-color: var(--card-bg);
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3 ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color);
+}
+
+.card h4 {
+  font-size: 18px;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.price {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  align-self: flex-start;
+}
+
+/* ===FOTTER=== */
+
+footer {
+  background-color: var(--dark-color);
+  color: #ffffff;
+  padding: 60px 20px 40px;
+  margin-top: 60px;
+}
+
+/* ===FOOTER CONTENT=== */
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #333333;
+}
+
+/* ===FOOTER INFO=== */
+
+.footer-info h3 {
+  color: var(--secondary-color);
+  font-size: 22px;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+
+footer-info p {
+  color: #aaaaaa;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* ===FOOTER CONTACT + HOURS=== */
+
+.fooer-contact h4,
+.footer-hours h4 {
+  color: var(--secondary-color);
+  font-size: 16px;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.footer-contact p,
+.footer-hours p {
+  color: #aaaaaa;
+  font-size: 14px;
+  line-height: 2;
+}
+
+/* FOOTER BOTTOM=== */
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-bottom p {
+  text-align: center;
+  color: #666666;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+/* ===RESPONSIVE FOR TABLET=== */
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+    text-align: center;
+  }
+  /* nav link ko wrap kro  */
+
+  nav ul {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-content h2 {
+    font-size: 32px;
+  }
+  .menu-section {
+    padding: 40px 20px;
+  }
+
+  .items-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* ===RESPONSIVE FOR MOBILE=== */
+
+@media (max-width: 480px) {
+  .hero-content h2 {
+    font-size: 26px;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+  }
+
+  .items-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category h3 {
+    font-size: 20px;
+  }
+
+  .menu-title {
+    font-size: 28px;
+  }
+
+  footer {
+    padding: 40px 20px 20px;
+  }
+}
