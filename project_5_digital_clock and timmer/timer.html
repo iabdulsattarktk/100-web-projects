@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <span>⏰</span>
+            <h1>ClockZone</h1>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-btn">
+                Clock
+            <a href="timer.html" class="nav-btn active">
+                Timer
+            </a>
+        </div>  
+    </nav>
+
+    <!-- ============================================ -->
+
+<main class="page" id="timer-page">
+        <!-- main content area — id="timer-page" se JS identify karega -->
+
+        <div class="timer-container">
+            <!-- poore timer ko wrap karne wali div -->
+
+            <h2 class="timer-title">Countdown Timer</h2>
+            <!-- timer ka heading -->
+
+            <div class="timer-display">
+                <!-- timer ke digits dikhane wali div -->
+
+                <span class="timer-digit" id="timer-hours">00</span>
+                <!-- timer ke hours — id se JS update karega -->
+
+                <span class="timer-colon">:</span>
+                <!-- colon hours aur minutes ke beech -->
+
+                <span class="timer-digit" id="timer-minutes">00</span>
+                <!-- timer ke minutes -->
+
+                <span class="timer-colon">:</span>
+                <!-- colon minutes aur seconds ke beech -->
+
+                <span class="timer-digit" id="timer-seconds">00</span>
+                <!-- timer ke seconds -->
+
+            </div>
+            <!-- timer-display khatam -->
+
+            <div class="timer-inputs">
+                <!-- user yahan se hours, minutes, seconds daale ga -->
+
+                <div class="input-group">
+                    <!-- hours input wali div -->
+
+                    <input type="number" id="input-hours" min="0" max="99" placeholder="00">
+                    <!-- number input — sirf 0 se 99 tak — placeholder "00" dikhata hai -->
+
+                    <label for="input-hours">Hours</label>
+                    <!-- input ke neeche "Hours" label -->
+
+                </div>
+                <!-- hours input-group khatam -->
+
+                <div class="input-separator">:</div>
+                <!-- inputs ke beech colon -->
+
+                <div class="input-group">
+                    <!-- minutes input wali div -->
+
+                    <input type="number" id="input-minutes" min="0" max="59" placeholder="00">
+                    <!-- number input — sirf 0 se 59 tak -->
+
+                    <label for="input-minutes">Minutes</label>
+                    <!-- input ke neeche "Minutes" label -->
+
+                </div>
+                <!-- minutes input-group khatam -->
+
+                <div class="input-separator">:</div>
+                <!-- inputs ke beech colon -->
+
+                <div class="input-group">
+                    <!-- seconds input wali div -->
+
+                    <input type="number" id="input-seconds" min="0" max="59" placeholder="00">
+                    <!-- number input — sirf 0 se 59 tak -->
+
+                    <label for="input-seconds">Seconds</label>
+                    <!-- input ke neeche "Seconds" label -->
+
+                </div>
+                <!-- seconds input-group khatam -->
+
+            </div>
+            <!-- timer-inputs khatam -->
+
+            <div class="timer-buttons">
+                <!-- Start, Pause, Reset buttons wali div -->
+
+                <button class="btn btn-start" id="btn-start">
+                    <!-- Start button — id se JS click handle karega -->
+                    ▶ Start
+                </button>
+
+                <button class="btn btn-pause" id="btn-pause" disabled>
+                    <!-- Pause button — disabled matlab shuru mein click nahi hoga -->
+                    ⏸ Pause
+                </button>
+
+                <button class="btn btn-reset" id="btn-reset">
+                    <!-- Reset button — timer wapis zero par le jayega -->
+                    ↺ Reset
+                </button>
+
+            </div>
+            <!-- timer-buttons khatam -->
+
+            <div class="timer-message" id="timer-message">
+                <!-- yahan timer finish hone par message dikhega — JS control karega -->
+            </div>
+            <!-- timer-message khatam -->
+
+        </div>
+        <!-- timer-container khatam -->
+
+    </main>
+    <!-- main khatam -->
+
+    <script src="script.js"></script>
+    <!-- shared script.js file jodta hai — timer JS baad mein is file mein add hogi -->
+
+
+    <!-- =========================================== -->
+</body>
+</html>

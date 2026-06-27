@@ -1,0 +1,386 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0a0a0f;
+  color: #ffffff;
+  font-family: "Courier New", monospace;
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #12121a;
+  border-bottom: 1px solid #2a2a3d;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-logo h1 {
+  font-size: 22px;
+  color: #00d4ff;
+  letter-spacing: 2px;
+}
+
+.nav-logo span {
+  font-size: 28px;
+}
+
+.nav-btn {
+  text-decoration: none;
+  color: #888899;
+  padding: 8px 24px;
+  border-radius: 25px;
+  border: 1px solid transparent;
+  font-size: 15px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.nav-btn.active {
+  color: #00d4ff;
+  background-color: rgba(0, 212, 255, 0.1);
+  border: 1px solid #00d4ff;
+}
+
+.nav-btn:hover {
+  color: #c8ff00;
+  border: 1px solid #00d4ff;
+}
+
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px);
+}
+
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 60px 80px;
+  background-color: #12121a;
+  border-radius: 24px;
+  border: 1px solid #2a2a3d;
+  box-shadow: 0 0 60px rgba(0, 212, 255, 0.08);
+}
+
+.clock-display {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.clock-digit {
+  font-size: 100px;
+  font-weight: 700px;
+  color: #00d4ff;
+  font-family: "Courier New", monospace;
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+  min-width: 120px;
+  text-align: center;
+  letter-spacing: 4px;
+}
+
+.clock-colon {
+  font-size: 80px;
+  color: #00d4ff;
+  opacity: 0.7;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.clock-ampm {
+  font-size: 28px;
+  color: #00d4ff;
+  opacity: 0.8;
+  font-weight: 600;
+  margin-left: 10px;
+  align-self: flex-start;
+  margin-top: 20px;
+}
+
+.clock-date {
+  font-size: 18px;
+  color: #888899;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* ============================================ */
+/* TIMER PAGE CSS — style.css ke end mein add karo */
+/* ============================================ */
+
+/* timer container ka design */
+.timer-container {
+    display: flex;
+    /* andar ki cheezein ek column mein rakho */
+    flex-direction: column;
+    /* title, display, inputs, buttons — sab upar se neeche */
+    align-items: center;
+    /* horizontally center */
+    gap: 40px;
+    /* har cheez ke beech 40px space */
+    padding: 50px 70px;
+    /* container ke andar space */
+    background-color: #12121a;
+    /* dark background — same clock container jaisa */
+    border-radius: 24px;
+    /* corners round */
+    border: 1px solid #2a2a3d;
+    /* subtle border */
+    box-shadow: 0 0 60px rgba(0, 212, 255, 0.08);
+    /* neon blue glow */
+}
+
+/* timer heading ka design */
+.timer-title {
+    font-size: 16px;
+    /* chota heading */
+    color: #888899;
+    /* grey color — secondary */
+    letter-spacing: 4px;
+    /* letters mein space */
+    text-transform: uppercase;
+    /* capital letters */
+    font-weight: 400;
+    /* thin font */
+}
+
+/* timer digits wali row */
+.timer-display {
+    display: flex;
+    /* digits ek line mein */
+    align-items: baseline;
+    /* baseline par align */
+    gap: 5px;
+    /* digits ke beech gap */
+}
+
+/* timer ke har digit block ka design */
+.timer-digit {
+    font-size: 90px;
+    /* badi digits */
+    font-weight: 700;
+    /* bold */
+    color: #00d4ff;
+    /* neon blue */
+    font-family: 'Courier New', monospace;
+    /* monospace font */
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+    /* neon glow */
+    min-width: 110px;
+    /* fixed width — layout stable rahega */
+    text-align: center;
+    /* center mein */
+    letter-spacing: 4px;
+    /* letters mein space */
+}
+
+/* timer colon ka design */
+.timer-colon {
+    font-size: 70px;
+    /* colon digits se chota */
+    color: #00d4ff;
+    /* neon blue */
+    opacity: 0.7;
+    /* thoda transparent */
+    font-weight: 300;
+    /* thin */
+    margin-bottom: 8px;
+    /* thoda upar */
+}
+
+/* inputs wali row */
+.timer-inputs {
+    display: flex;
+    /* inputs ek line mein */
+    align-items: center;
+    /* vertically center */
+    gap: 10px;
+    /* inputs ke beech gap */
+}
+
+/* har input group — input + label */
+.input-group {
+    display: flex;
+    /* input aur label column mein */
+    flex-direction: column;
+    /* input upar, label neeche */
+    align-items: center;
+    /* center mein */
+    gap: 8px;
+    /* input aur label ke beech space */
+}
+
+/* number input fields ka design */
+.input-group input {
+    width: 90px;
+    /* input ki width */
+    padding: 10px;
+    /* input ke andar space */
+    background-color: #0a0a0f;
+    /* dark background */
+    border: 1px solid #2a2a3d;
+    /* subtle border */
+    border-radius: 10px;
+    /* corners round */
+    color: #00d4ff;
+    /* neon blue text */
+    font-size: 22px;
+    /* text size */
+    font-family: 'Courier New', monospace;
+    /* monospace font */
+    text-align: center;
+    /* text center mein */
+    outline: none;
+    /* click par default blue outline hatao */
+}
+
+/* input par focus hone par design */
+.input-group input:focus {
+    border: 1px solid #00d4ff;
+    /* focus par neon blue border */
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+    /* focus par glow */
+}
+
+/* input ke neeche label ka design */
+.input-group label {
+    font-size: 11px;
+    /* chota label */
+    color: #888899;
+    /* grey */
+    letter-spacing: 2px;
+    /* space */
+    text-transform: uppercase;
+    /* capital */
+}
+
+/* inputs ke beech colon separator */
+.input-separator {
+    font-size: 30px;
+    /* colon ka size */
+    color: #2a2a3d;
+    /* dim color */
+    margin-bottom: 25px;
+    /* label ke saath align karne ke liye */
+}
+
+/* buttons wali row */
+.timer-buttons {
+    display: flex;
+    /* buttons ek line mein */
+    gap: 15px;
+    /* buttons ke beech space */
+}
+
+/* sab buttons ka base design */
+.btn {
+    padding: 12px 30px;
+    /* button ke andar space */
+    border: none;
+    /* default border hatao */
+    border-radius: 25px;
+    /* pill shape */
+    font-size: 15px;
+    /* text size */
+    font-family: 'Courier New', monospace;
+    /* monospace font */
+    letter-spacing: 1px;
+    /* text mein space */
+    cursor: pointer;
+    /* mouse pointer button par aaye */
+    transition: all 0.3s ease;
+    /* smooth hover effect */
+    font-weight: 600;
+    /* semi bold */
+}
+
+/* Start button ka design */
+.btn-start {
+    background-color: rgba(0, 212, 255, 0.15);
+    /* halka neon blue background */
+    color: #00d4ff;
+    /* neon blue text */
+    border: 1px solid #00d4ff;
+    /* neon blue border */
+}
+
+/* Start button hover */
+.btn-start:hover {
+    background-color: rgba(0, 212, 255, 0.3);
+    /* hover par zyada bright */
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+    /* hover par glow */
+}
+
+/* Pause button ka design */
+.btn-pause {
+    background-color: rgba(255, 200, 0, 0.15);
+    /* halka yellow background */
+    color: #ffc800;
+    /* yellow text */
+    border: 1px solid #ffc800;
+    /* yellow border */
+}
+
+/* Pause button hover */
+.btn-pause:hover:not([disabled]) {
+    background-color: rgba(255, 200, 0, 0.3);
+    /* hover par bright — disabled ho toh nahi */
+    box-shadow: 0 0 15px rgba(255, 200, 0, 0.4);
+    /* glow */
+}
+
+/* Reset button ka design */
+.btn-reset {
+    background-color: rgba(255, 70, 70, 0.15);
+    /* halka red background */
+    color: #ff4646;
+    /* red text */
+    border: 1px solid #ff4646;
+    /* red border */
+}
+
+/* Reset button hover */
+.btn-reset:hover {
+    background-color: rgba(255, 70, 70, 0.3);
+    /* hover par bright */
+    box-shadow: 0 0 15px rgba(255, 70, 70, 0.4);
+    /* glow */
+}
+
+/* disabled button ka design — Pause shuru mein disabled hoga */
+.btn:disabled {
+    opacity: 0.3;
+    /* dim dikh raha hoga */
+    cursor: not-allowed;
+    /* mouse par X wala pointer aayega */
+}
+
+/* timer finish hone par message ka design */
+.timer-message {
+    font-size: 18px;
+    /* message ka size */
+    color: #ff4646;
+    /* red color — alert jaisa */
+    letter-spacing: 3px;
+    /* space */
+    text-transform: uppercase;
+    /* capital */
+    min-height: 30px;
+    /* message area ki height — taake layout shift na ho */
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <span>⏱</span>
+        <h1>CLockZone</h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html" class="nav-btn active"> Clock </a>
+        <a href="timer.html" class="nav-btn"> Timer </a>
+      </div>
+    </nav>
+
+    <main class="page" id="clock-page">
+      <div class="clock-container">
+        <div class="clock-display">
+          <span class="clock-digit" id="hours">00</span>
+          <span class="clock-colon">:</span>
+
+          <span class="clock-digit" id="minutes">00</span>
+          <span class="clock-colon">:</span>
+
+          <span class="clock-digit" id="seconds">00</span>
+          <span class="clock-ampm" id="ampn">AM</span>
+        </div>
+
+        <div class="clock-date" id="clock-date">Monday, 01 Jan 2026</div>
+      </div>
+    </main>
+  </body>
+  <script src="script.js"></script>
+</html>
