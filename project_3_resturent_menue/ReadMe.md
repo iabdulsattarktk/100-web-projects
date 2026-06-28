@@ -30,9 +30,13 @@ A static restaurant menu website for a Pakistani restaurant built with vanilla H
 project_3_restaurant_menu
 | 
  ├── index.html
+ <br>
  ├── style.css
+ <br>
  ├── script.js
+ <br>
  ├── karachi-biryani.jpg
+ <br>
  └── ReadMe.md
 
  ## How to Run

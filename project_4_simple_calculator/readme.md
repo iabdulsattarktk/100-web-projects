@@ -27,9 +27,13 @@ A clean, modern web-based calculator built with vanilla HTML, CSS Grid, and Java
 
 project_4_simple_calculator
 │
+<br>
 ├── index.html
+<br>
 ├── style.css
+<br>
 ├── script.js
+<br>
 └── README.md
 
 ## How to Run
