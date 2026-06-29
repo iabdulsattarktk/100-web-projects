@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EID CARD MAKER</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- body starts -->
+
+    <header class="site-header">
+      <h1 class="site-title">Eid Card Maker</h1>
+      <p class="site-subtitile">Apna Eid Card banao aur download karo</p>
+    </header>
+
+    <main class="main-container">
+      <section class="form-section">
+        <h2 class="form-title">Card ki Details Barho</h2>
+        <div class="form-group">
+          <label for="user-name">Tomhara Naam:</label>
+          <input
+            type="text"
+            id="user-name"
+            class="form-input"
+            placeholder="Apna naam likho"
+            maxlength="30"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="eid-message">Eid Message:</label>
+          <select id="eid-message" class="form-input">
+            <option value="">-- Message chose karo --</option>
+            <option value="Eid Mubarak! Allah ap  ki khushya barhay">
+              Eid Mubarak -Basic
+            </option>
+            <option value="Chand Raat Mubarak! khuskyan or barkatain hu ">
+              Chand Raat Mubarak
+            </option>
+            <option value="Eid ul Fitar Mubarak! Allah qabool farmay">
+              Eid ul Fitar Mubarak
+            </option>
+            <option value="Ap or ap ke  ghar walo ko  Eid MUbarak">
+              Ghar walo ko Eid Mubarak
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label> Card Theme Chose Kroo:</label>
+          <div class="theme-options">
+            <input
+              type="radio"
+              name="theme"
+              id="theme-green"
+              value="green"
+              checked
+            />
+            <label for="theme-green" class="theme-label green-theme"
+              >🌙 Green</label
+            >
+
+            <input type="radio" name="Theme" id="theme-gold" value="gold" />
+            <label for="theme-gold" class="theme-label gold-theme"
+              >⭐ Gold</label
+            >
+
+            <input type="radio" name="theme" id="theme-blue" value="blue" />
+            <label for="theme-blue" class="theme-label blue-theme"
+              >🕌 Blue</label
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="preview-section">
+        <h2 class="form-title">Live Preview</h2>
+        <div class="card" id="eid-card">
+          <div class="card-decoration top-decoration">
+            <span>🌙</span>
+            <span>⭐</span>
+            <span>🌙</span>
+          </div>
+
+          <div class="card-content">
+            <h2 class="card-eid-title">عید مبارک</h2>
+            <p class="card-eid-english">Eid Mubarak</p>
+            <div class="card-divider"></div>
+            <p class="card-message" id="card-message-display">
+              Apna message oper se chose kry
+            </p>
+            <p class="card-recipient" id="card-recipient-display">
+              - Tumhara Naam -
+            </p>
+          </div>
+          <div class="card-decoration bottom-decoration">
+            <span>⭐</span>
+            <span>🕌</span>
+            <span>⭐</span>
+          </div>
+        </div>
+        <button class="download-btn" id="download-btn">
+          Card Download Karo
+        </button>
+      </section>
+    </main>
+
+    <!-- body ends -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- html2canvas library — yeh HTML element ko image mein convert karti hai -->
+    <script src="script.js"></script>
+  </body>
+</html>
