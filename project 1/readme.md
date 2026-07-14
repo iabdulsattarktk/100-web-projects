@@ -23,3 +23,6 @@ This project is a simple tribute webpage built with HTML and CSS. It showcases a
 
 ## Author
 Created as part of an HTML & CSS practice project.
+git checkout master
+git branch -M main
+git push -u origin main
