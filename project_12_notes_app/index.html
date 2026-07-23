@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ===BODY START=== -->
+
+    <!--main container  -->
+    <div class="container">
+      <!-- App header -->
+      <header class="app-header">
+        <!-- App title  -->
+        <h1 class="app-title">My Notes</h1>
+        <!--  Search Input area -->
+        <input
+          type="text"
+          id="searchInput"
+          class="search-bar"
+          placeholder="Search notes by title"
+        />
+      </header>
+
+      <section class="input-card">
+        <!-- user input title -->
+        <input
+          type="text"
+          id="noteTitle"
+          class="title-input"
+          placeholder="Note title"
+        />
+        <!-- user input body note -->
+        <textarea
+          id="noteBody"
+          class="body-input"
+          placeholder="Write your note here"
+          maxlength="500"
+        ></textarea>
+        <!-- para for character counter -->
+        <p id="charCounter" class="char-counter">0/500</p>
+        <!-- color chose karta ha  -->
+        <div class="color-picker">
+          <span
+            class="color-dot"
+            data-color="yellow"
+            style="background-color: #fff59d"
+          ></span>
+          <span
+            class="color-dot"
+            data-color="pink"
+            style="background-color: #f8bbd0"
+          ></span>
+          <span
+            class="color-dot"
+            data-color="blue"
+            style="background-color: #bbdefb"
+          ></span>
+          <span
+            class="color-dot"
+            data-color="green"
+            style="background-color: #c8e6c9"
+          ></span>
+          <span
+            class="color-dot"
+            data-color="purple"
+            style="background-color: #e1bee7"
+          ></span>
+        </div>
+        <!-- add wlaa button ha  -->
+        <button id="addNoteBtn" class="add-btn">Add Note</button>
+      </section>
+
+      <section class="notes-grid" id="notesGrid">
+        <div class="empty-state" id="emptyState">
+          <p class="empty-icon">📝</p>
+          <p class="empty-text">No notes yet. Start writing!</p>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- ===BODY END=== -->
+  </body>
+</html>

@@ -1,0 +1,275 @@
+/* ==============RESET & BASE============= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* ===========CONTAINER============== */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ==============HEADER================ */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.app-title {
+  font-size: 28px;
+  color: #4a4a4a;
+}
+
+.search-bar {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 220px;
+  outline: none;
+}
+
+.search-bar:focus {
+  border-color: #7b61ff;
+}
+
+/* =============== INPUPTCARD=================*/
+.input-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.title-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 12px;
+  outline: none;
+}
+
+.body-input {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  resize: vertical;
+  outline: none;
+}
+
+.char-counter {
+  text-align: right;
+  font-size: 12px;
+  color: #888;
+  margin: 6px 0 15px 0;
+}
+
+.color-picker {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.color-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.2s;
+}
+
+.color-dot:hover {
+  transform: scale(1.15);
+}
+
+.add-btn {
+  background-color: #7b61ff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-btn:hover {
+  background-color: #6449e0;
+}
+
+/* ============NOTES GRID============== */
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 700px) {
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========EMPTY STATE================= */
+
+.empty-state {
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 50px 20px;
+  color: #999;
+}
+
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.empty-text {
+  font-size: 16px;
+}
+
+
+/* ============ NOTE CARD ============ */
+
+.note-card {
+  padding: 15px;
+  /* Card ke andar chaaron taraf jagah */
+
+  border-radius: 10px;
+  /* Round corners, input-card jaisa consistent look */
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  /* Halka shadow, card "utha hua" dikhega */
+
+  display: flex;
+  /* Flex layout — andar ke elements (title, body, date, buttons) ko vertically stack karne ke liye */
+
+  flex-direction: column;
+  /* Column direction matlab elements upar se neeche stack honge (row nahi) */
+
+  gap: 8px;
+  /* Har child element ke beech 8px ka gap */
+
+  transition: transform 0.2s;
+  /* Hover pe smooth animation ke liye */
+}
+
+.note-card:hover {
+  transform: translateY(-3px);
+  /* Hover karne par card 3px upar "uth" jata hai — depth ka feel deta hai */
+}
+
+.note-title {
+  font-size: 17px;
+  /* Title thoda bada font */
+
+  font-weight: bold;
+  /* Bold, taake heading jaisa distinct dikhe */
+
+  color: #333;
+  /* Dark grey text, readable */
+
+  word-wrap: break-word;
+  /* Agar title bahut lamba single word ho (jaise URL), to wo card se overflow na ho, wrap ho jaye */
+}
+
+.note-body {
+  font-size: 14px;
+  /* Normal readable size, title se chhota */
+
+  color: #444;
+  /* Thoda halka dark grey */
+
+  white-space: pre-wrap;
+  /* Textarea mein user ne agar Enter dabaya (naya line) tha, wo yahan bhi respect hoga */
+  /* Normal HTML mein multiple spaces/newlines ignore ho jate hain, ye property unhe preserve karti hai */
+
+  word-wrap: break-word;
+  /* Lambe words wrap ho jayein, overflow na ho */
+}
+
+.note-date {
+  font-size: 11px;
+  /* Chhota font, ye secondary info hai */
+
+  color: #777;
+  /* Halka grey, subtle */
+}
+
+.note-actions {
+  display: flex;
+  /* Edit aur Delete button ek line mein aayenge */
+
+  gap: 8px;
+  /* Dono buttons ke beech gap */
+
+  margin-top: 8px;
+  /* Body/date se thoda separate dikhega */
+}
+
+.edit-btn,
+.delete-btn {
+  /* Comma se do selectors ek sath likhe — dono pe same base styling apply hogi */
+
+  padding: 6px 12px;
+  /* Chhote buttons, note card ke hisab se proportional */
+
+  border: none;
+  /* Default border hataya */
+
+  border-radius: 5px;
+  /* Thode round corners */
+
+  font-size: 13px;
+  /* Chhota readable text */
+
+  cursor: pointer;
+  /* Hover pe pointer icon */
+}
+
+.edit-btn {
+  background-color: #64b5f6;
+  /* Halka blue background — "edit" ke liye neutral/informative color */
+
+  color: white;
+}
+
+.delete-btn {
+  background-color: #e57373;
+  /* Halka red background — "delete" destructive action ke liye warning color */
+
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #4a9de0;
+  /* Darker blue on hover */
+}
+
+.delete-btn:hover {
+  background-color: #d05555;
+  /* Darker red on hover */
+}
